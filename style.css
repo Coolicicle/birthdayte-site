@@ -201,3 +201,7 @@ h2 {
   font-size: 1rem;
   margin-top: 16px;
 }
+
+#gateScreen {
+  background: #f9dbe7;
+}
