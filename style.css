@@ -5,8 +5,10 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffe7f1, #fff8dc);
-  color: #3a2330;
+  background-image: url("assets/collage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   min-height: 100vh;
 }
 
@@ -15,6 +17,10 @@ body {
   display: grid;
   place-items: center;
   padding: 24px;
+  background-image: url("assets/collage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .screen {
