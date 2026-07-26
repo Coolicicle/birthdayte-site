@@ -1,27 +1,13 @@
-const gateScreen = document.getElementById('gateScreen');
+const screens = [...document.querySelectorAll('.screen')];
+
+function show(id) {
+  screens.forEach(screen => screen.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
 const roomInput = document.getElementById('roomInput');
 const enterBtn = document.getElementById('enterBtn');
 const gateMessage = document.getElementById('gateMessage');
-
-enterBtn.addEventListener('click', () => {
-  const answer = roomInput.value.trim();
-
-  if (answer === '18-153') {
-    gateMessage.textContent = '';
-    show('intro');
-  } else {
-    gateMessage.textContent = 'Wrong answer. Try again.';
-  }
-});
-
-const screens = [...document.querySelectorAll('.screen')];
-const show = id => screens.forEach(s => s.classList.toggle('active', s.id === id));
-
-const state = {
-  date: '',
-  activities: [],
-  wheel: ''
-};
 
 const startBtn = document.getElementById('startBtn');
 const dateBtns = [...document.querySelectorAll('.date-btn')];
@@ -35,17 +21,40 @@ const wheelResult = document.getElementById('wheelResult');
 const summaryText = document.getElementById('summaryText');
 const telegramLink = document.getElementById('telegramLink');
 
-startBtn.addEventListener('click', () => show('dateScreen'));
+const state = {
+  date: '',
+  activities: [],
+  wheel: ''
+};
 
-dateBtns.forEach(btn => btn.addEventListener('click', () => {
-  state.date = btn.dataset.date;
-  dateBtns.forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  dateResult.textContent = `Chosen date: ${state.date}`;
-  toActivities.disabled = false;
-}));
+enterBtn.addEventListener('click', () => {
+  const answer = roomInput.value.trim();
 
-toActivities.addEventListener('click', () => show('activitiesScreen'));
+  if (answer === '18-153') {
+    gateMessage.textContent = '';
+    show('intro');
+  } else {
+    gateMessage.textContent = 'Wrong answer. Try again.';
+  }
+});
+
+startBtn.addEventListener('click', () => {
+  show('dateScreen');
+});
+
+dateBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    state.date = btn.dataset.date;
+    dateBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    dateResult.textContent = `Chosen date: ${state.date}`;
+    toActivities.disabled = false;
+  });
+});
+
+toActivities.addEventListener('click', () => {
+  show('activitiesScreen');
+});
 
 toWheel.addEventListener('click', () => {
   state.activities = [...document.querySelectorAll('.checks input:checked')].map(i => i.value);
