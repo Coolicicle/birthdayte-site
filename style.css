@@ -167,8 +167,8 @@ h2 {
 }
 
 .intro-gif {
-  width: 90px;
-  max-width: 100%;
+  width: 180px;
+  max-width: 50%;
 }
 
 @keyframes flicker {
