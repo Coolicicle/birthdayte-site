@@ -1,3 +1,19 @@
+const gateScreen = document.getElementById('gateScreen');
+const roomInput = document.getElementById('roomInput');
+const enterBtn = document.getElementById('enterBtn');
+const gateMessage = document.getElementById('gateMessage');
+
+enterBtn.addEventListener('click', () => {
+  const answer = roomInput.value.trim();
+
+  if (answer === '18-153') {
+    gateMessage.textContent = '';
+    show('intro');
+  } else {
+    gateMessage.textContent = 'Wrong answer. Try again.';
+  }
+});
+
 const screens = [...document.querySelectorAll('.screen')];
 const show = id => screens.forEach(s => s.classList.toggle('active', s.id === id));
 
