@@ -160,58 +160,15 @@ h2 {
   font-weight: 700;
 }
 
-.cake {
+.intro-media {
   margin: 18px auto 0;
-  width: 160px;
-  position: relative;
+  display: grid;
+  place-items: center;
 }
 
-.candle {
-  width: 10px;
-  height: 48px;
-  background: #ffb703;
-  margin: 0 auto;
-  border-radius: 8px;
-  position: relative;
-  animation: flicker 0.8s infinite alternate;
-}
-
-.candle::before {
-  content: '';
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 24px;
-  background: radial-gradient(circle, #fff7b1 0 35%, #ff8fab 36% 100%);
-  border-radius: 50%;
-}
-
-.cake-body {
-  width: 160px;
-  height: 70px;
-  margin-top: 8px;
-  border-radius: 18px 18px 12px 12px;
-  background: linear-gradient(180deg, #ffd6e7, #f7a9c4);
-}
-
-.sparkles::before,
-.sparkles::after {
-  content: '✨';
-  position: absolute;
-  font-size: 1.3rem;
-  animation: float 2s infinite ease-in-out;
-}
-
-.sparkles::before {
-  left: -10px;
-  top: 18px;
-}
-
-.sparkles::after {
-  right: -10px;
-  top: 8px;
+.intro-gif {
+  width: 180px;
+  max-width: 100%;
 }
 
 @keyframes flicker {
