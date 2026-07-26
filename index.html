@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="screen active" id="intro">
+      <div class="card hero">
+        <p class="label">Happy Birthday</p>
+        <h1>Happy Birthday, Amanda 🎉</h1>
+        <p class="subtitle">A tiny interactive surprise made just for you.</p>
+
+        <div class="cake" aria-hidden="true">
+          <div class="candle"></div>
+          <div class="cake-body"></div>
+          <div class="sparkles"></div>
+        </div>
+
+        <button class="btn" id="startBtn">Start</button>
+      </div>
+    </section>
+
+    <section class="screen" id="dateScreen">
+      <div class="card">
+        <p class="label">Step 1</p>
+        <h2>Choose a date</h2>
+        <p class="subtitle">Pick when you want to celebrate.</p>
+
+        <div class="choices">
+          <button class="choice-btn date-btn" data-date="2026-08-01">1 Aug 2026</button>
+          <button class="choice-btn date-btn" data-date="2026-08-02">2 Aug 2026</button>
+          <button class="choice-btn date-btn" data-date="2026-08-03">3 Aug 2026</button>
+        </div>
+
+        <p class="selected" id="dateResult">No date chosen yet.</p>
+        <button class="btn next-btn" id="toActivities" disabled>Continue</button>
+      </div>
+    </section>
+
+    <section class="screen" id="activitiesScreen">
+      <div class="card">
+        <p class="label">Step 2</p>
+        <h2>Shortlist activities</h2>
+        <p class="subtitle">Choose the options you like.</p>
+
+        <div class="checks">
+          <label><input type="checkbox" value="Cafe hopping"> Cafe hopping</label>
+          <label><input type="checkbox" value="Karaoke"> Karaoke</label>
+          <label><input type="checkbox" value="Dessert cafe"> Dessert cafe</label>
+          <label><input type="checkbox" value="Movie night"> Movie night</label>
+          <label><input type="checkbox" value="Dinner outing"> Dinner outing</label>
+        </div>
+
+        <button class="btn next-btn" id="toWheel">Spin the wheel</button>
+      </div>
+    </section>
+
+    <section class="screen" id="wheelScreen">
+      <div class="card">
+        <p class="label">Step 3</p>
+        <h2>Spin the wheel</h2>
+        <p class="subtitle">Let fate choose one of your shortlisted ideas.</p>
+
+        <div class="wheel-wrap">
+          <div class="wheel" id="wheel">
+            <div class="pointer"></div>
+            <div class="wheel-center">Spin</div>
+          </div>
+        </div>
+
+        <button class="btn" id="spinBtn">Spin</button>
+        <p class="selected" id="wheelResult">No result yet.</p>
+        <button class="btn next-btn" id="toSummary" disabled>Show summary</button>
+      </div>
+    </section>
+
+    <section class="screen" id="summaryScreen">
+      <div class="card">
+        <p class="label">Final step</p>
+        <h2>Your birthday plan</h2>
+        <p class="summary" id="summaryText"></p>
+        <a class="btn telegram-btn" id="telegramLink" href="#" target="_blank" rel="noopener">Send to Telegram</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
