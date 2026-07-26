@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("assets/collage.png");
+  background-image: url("./assets/collage.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,7 +17,7 @@ body {
   display: grid;
   place-items: center;
   padding: 24px;
-  background-image: url("assets/collage.png");
+  background-image: url("./assets/collage.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
