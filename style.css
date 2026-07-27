@@ -131,7 +131,7 @@ font-weight: 700;
     opacity: 1;
   }
 
-  50% {
+  40% {
     opacity: 0;
   }
 
@@ -141,7 +141,7 @@ font-weight: 700;
 }
 
 .flicker {
-  animation: wrongAnswerFlicker 0.5s ease-in-out;
+  animation: wrongAnswerFlicker 0.25s ease-in-out;
 }
 
 .wheel-wrap {
