@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -211,7 +212,7 @@
 
         <button
           class="btn next-btn"
-          id="toActivities"
+          id="toMemories"
           disabled
         >
           Continue
@@ -264,15 +265,18 @@
 
         <div class="memory-letter">
 
-          <p> You'll get to see and choose some activities
+          <p>
+            You'll get to see and choose some activities
             for our birthday-te itinerary later hehe BUT
             FIRST I wanted to plan this activity for us
             cause idk if you remember when I sent into the
             communication group chat that day I was at the
             'design your own Uniqlo shirt' thing and I
-            actually wanted to get the Pokopia one that day</p>
-          <br>
-          <p> But then as I was designing it I realised the
+            actually wanted to get the Pokopia one that day.
+          </p>
+
+          <p>
+            But then as I was designing it I realised the
             character designs looked kind of just like our
             Pokopia characters and they had the designs of
             the keychains u got for us too so I wanted us
@@ -280,14 +284,15 @@
             the actual experience of designing and getting
             together too, since we've both got Uniqlo
             sweaters for each other on our own but this time
-            we get to experience it together :) </p>
+            we get to experience it together :)
+          </p>
 
         </div>
 
 
         <button
           class="btn"
-          id="toActivitiesFromMemories"
+          id="toVibe"
         >
           Continue
         </button>
@@ -299,26 +304,241 @@
 
 
     <!-- =========================
-         ACTIVITIES SCREEN
+         VIBE CHOICE SCREEN
     ========================== -->
 
     <section
       class="screen"
-      id="activitiesScreen"
+      id="vibeScreen"
+    >
+
+      <div class="card vibe-card">
+
+        <p class="label">
+          Step 3
+        </p>
+
+        <h2>
+          What kind of birthday-te are we having? 🤔
+        </h2>
+
+        <p class="subtitle">
+          Choose your pookies adventure hehe
+        </p>
+
+
+        <div class="vibe-options">
+
+
+          <!-- HOME OPTION -->
+
+          <button
+            class="vibe-option"
+            id="homeOption"
+          >
+
+            <img
+              src="./assets/pookies-home.jpg"
+              alt="Pookies chill at home"
+            />
+
+            <span>
+              Pookies chill at home 🏠
+            </span>
+
+          </button>
+
+
+
+          <!-- DAY OUT OPTION -->
+
+          <button
+            class="vibe-option"
+            id="dayOutOption"
+          >
+
+            <img
+              src="./assets/pookies-day-out.jpg"
+              alt="Pookies day out"
+            />
+
+            <span>
+              Pookies day out 🌎
+            </span>
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HOME ACTIVITIES
+    ========================== -->
+
+    <section
+      class="screen"
+      id="homeActivitiesScreen"
     >
 
       <div class="card">
 
         <p class="label">
-          Step 2
+          Step 4
         </p>
 
         <h2>
-          The Itinerary 🤩
+          Pookies chill at home 🏠
         </h2>
 
         <p class="subtitle">
-          Including other activities for you to choose!
+          Choose what we should do at home hehe
+        </p>
+
+
+        <div class="surprise-cards">
+
+
+          <!-- MOVIE NIGHT -->
+
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  🎬 Movie Night
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Movie Night"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- GAMING -->
+
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  🎮 Gaming
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Gaming"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- ADD MORE HOME ACTIVITIES HERE -->
+
+        </div>
+
+
+        <button
+          class="btn"
+          id="homeToSummary"
+        >
+          Show my birthday plan
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DAY OUT ACTIVITIES
+    ========================== -->
+
+    <section
+      class="screen"
+      id="dayOutActivitiesScreen"
+    >
+
+      <div class="card">
+
+        <p class="label">
+          Step 4
+        </p>
+
+        <h2>
+          Pookies day out 🌎
+        </h2>
+
+        <p class="subtitle">
+          Choose what we should do outside hehe
         </p>
 
 
@@ -358,7 +578,7 @@
 
                   <input
                     type="checkbox"
-                    value="Cafe hopping"
+                    value="Cafe Hopping"
                   />
 
                   Choose this activity
@@ -382,7 +602,7 @@
               <div class="envelope-front">
 
                 <span>
-                  ✉️
+                  🎤
                 </span>
 
                 <p>
@@ -454,55 +674,7 @@
 
                   <input
                     type="checkbox"
-                    value="Dessert cafe"
-                  />
-
-                  Choose this activity
-
-                </label>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- MOVIE NIGHT -->
-
-          <div class="surprise-card">
-
-            <div class="envelope">
-
-              <div class="envelope-front">
-
-                <span>
-                  ✉️
-                </span>
-
-                <p>
-                  A surprise for you...
-                </p>
-
-                <small>
-                  Click to reveal
-                </small>
-
-              </div>
-
-
-              <div class="activity-reveal">
-
-                <h3>
-                  🎬 Movie Night
-                </h3>
-
-                <label>
-
-                  <input
-                    type="checkbox"
-                    value="Movie night"
+                    value="Dessert Cafe"
                   />
 
                   Choose this activity
@@ -526,7 +698,7 @@
               <div class="envelope-front">
 
                 <span>
-                  ✉️
+                  🍽️
                 </span>
 
                 <p>
@@ -550,7 +722,7 @@
 
                   <input
                     type="checkbox"
-                    value="Dinner outing"
+                    value="Dinner Outing"
                   />
 
                   Choose this activity
@@ -564,86 +736,17 @@
           </div>
 
 
-        </div>
 
-
-        <button
-          class="btn next-btn"
-          id="toWheel"
-        >
-          Spin the wheel
-        </button>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         WHEEL SCREEN
-    ========================== -->
-
-    <section
-      class="screen"
-      id="wheelScreen"
-    >
-
-      <div class="card">
-
-        <p class="label">
-          Step 4
-        </p>
-
-        <h2>
-          Spin the wheel
-        </h2>
-
-        <p class="subtitle">
-          Let fate choose one of your shortlisted ideas.
-        </p>
-
-
-        <div class="wheel-wrap">
-
-          <div
-            class="wheel"
-            id="wheel"
-          >
-
-            <div class="pointer"></div>
-
-            <div class="wheel-center">
-              Spin
-            </div>
-
-          </div>
+          <!-- ADD MORE DAY OUT ACTIVITIES HERE -->
 
         </div>
 
 
         <button
           class="btn"
-          id="spinBtn"
+          id="dayOutToSummary"
         >
-          Spin
-        </button>
-
-
-        <p
-          class="selected"
-          id="wheelResult"
-        >
-          No result yet.
-        </p>
-
-
-        <button
-          class="btn next-btn"
-          id="toSummary"
-          disabled
-        >
-          Show summary
+          Show my birthday plan
         </button>
 
       </div>
@@ -668,7 +771,7 @@
         </p>
 
         <h2>
-          Your birthday plan
+          Your birthday plan 🎉
         </h2>
 
 
