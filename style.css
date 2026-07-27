@@ -17,8 +17,6 @@ body {
   display: none;
   width: 100%;
   min-height: 100vh;
-  max-width: 720px;
-  margin: 0 auto;
   padding: 24px;
 }
 
