@@ -2,7 +2,8 @@
   box-sizing: border-box;
   }
 
-html, body {
+html,
+body {
 margin: 0;
 padding: 0;
 min-height: 100%;
@@ -45,35 +46,48 @@ background-position: center;
 background-size: cover;
 }
 
+/* Main cards */
 .card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
-  text-align: center;
-  max-width: 720px;
-  width: 100%;
-  z-index: 0;
+position: relative;
+background: rgba(255, 255, 255, 0.92);
+backdrop-filter: blur(8px);
+border-radius: 24px;
+padding: 32px;
+box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+text-align: center;
+max-width: 720px;
+width: 100%;
+z-index: 0;
 }
 
+/* Candy-cane border for all cards except the password card */
 .card::before {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  border-radius: 36px;
+content: "";
+position: absolute;
+inset: -12px;
+border-radius: 36px;
 
-  background: repeating-linear-gradient(
-    45deg,
-    #f5559d 0px,
-    #f5559d 10px,
-    white 10px,
-    white 20px
-  );
+background: repeating-linear-gradient(
+45deg,
+#f5559d 0px,
+#f5559d 10px,
+white 10px,
+white 20px
+);
 
-  z-index: -1;
+z-index: -1;
 }
+
+/* Password card stays plain */
+#gateScreen .card {
+background: rgba(255, 255, 255, 0.88);
+border: none;
+}
+
+#gateScreen .card::before {
+display: none;
+}
+
 .hero h1,
 h2 {
 margin: 8px 0 12px;
@@ -144,22 +158,23 @@ min-height: 24px;
 font-weight: 700;
 }
 
+/* Wrong-answer flicker */
 @keyframes wrongAnswerFlicker {
-  0% {
-    opacity: 1;
-  }
+0% {
+opacity: 1;
+}
 
-  40% {
-    opacity: 0;
-  }
+40% {
+opacity: 0;
+}
 
-  100% {
-    opacity: 1;
-  }
+100% {
+opacity: 1;
+}
 }
 
 .flicker {
-  animation: wrongAnswerFlicker 0.25s ease-in-out;
+animation: wrongAnswerFlicker 0.25s ease-in-out;
 }
 
 .wheel-wrap {
