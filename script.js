@@ -39,6 +39,7 @@ function updateSummary() {
 Activities: ${state.activities.join(", ") || "None"}`;
 
   summaryText.textContent = text;
+}
 
   const telegramText = encodeURIComponent(text);
   const telegramUrl = encodeURIComponent(window.location.href);
