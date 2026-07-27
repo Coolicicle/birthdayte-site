@@ -405,7 +405,6 @@ function goToSummary() {
 
   const text =
 `Date: ${state.date || 'Not chosen'}
-
 Activities: Get matching pokopia shirts + ${state.activities.join(', ')}`;
 
 
