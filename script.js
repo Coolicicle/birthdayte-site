@@ -35,15 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function updateSummary() {
-summaryText.textContent = `Date: ${date}\nActivities: Get matching pokopia shirts + ${activities}`;
+function updateSummary() {
+  const activitiesText = state.activities.join(", ");
 
-    const telegramText = encodeURIComponent(text);
-    const telegramUrl = encodeURIComponent(window.location.href);
-    telegramLink.href = `https://t.me/share/url?url=${telegramUrl}&text=${telegramText}`;
+  const text = `Date: ${state.date}
+Activities: Get matching pokopia shirts + ${activitiesText}`;
 
-    show("summaryScreen");
-  }
+  summaryText.textContent = text;
+
+  const telegramText = encodeURIComponent(text);
+  const telegramUrl = encodeURIComponent(window.location.href);
+
+  telegramLink.href = `https://t.me/share/url?url=${telegramUrl}&text=${telegramText}`;
+
+  show("summaryScreen");
+}
 
   enterBtn.addEventListener("click", checkRoom);
 
