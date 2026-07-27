@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateSummary() {
-    const text = `Date: ${state.date || "Not chosen"}
+    const text = `Date: ${state.date || "Not chosen"}<br>
 Activities: ${state.activities.join(", ") || "None"}`;
 
     summaryText.textContent = text;
