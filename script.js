@@ -463,19 +463,6 @@ dayOutToSummary.addEventListener(
 
 function goBackToVibe() {
 
-  document
-    .querySelector("#homeActivitiesScreen")
-    .classList
-    .remove("active");
-
-  document
-    .querySelector("#dayOutActivitiesScreen")
-    .classList
-    .remove("active");
-
-  document
-    .querySelector("#vibeScreen")
-    .classList
-    .add("active");
+  show('vibeScreen');
 
 }
