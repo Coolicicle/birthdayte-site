@@ -1,312 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Birthday-te Surprise</title>
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
-
 <body>
-
   <main class="app">
-
-
-    <!-- =========================
-         PASSWORD SCREEN
-    ========================== -->
-
-    <section
-      class="screen active"
-      id="gateScreen"
-    >
-
+<!--PASSWORD SCREEN-->
+    <section class="screen active" id="gateScreen">
       <div class="card password-card">
-
-        <p class="label">
-          Don't snoop if you're not Amanda!
-        </p>
-
-        <h2>
-          For Amanda's eyes only 👀
-        </h2>
-
-        <p class="subtitle">
-          Enter our room number
-          (with special characters included)
-        </p>
-
-        <input
-          type="text"
-          id="roomInput"
-          placeholder="Type here..."
-        />
-
-        <button
-          class="btn"
-          id="enterBtn"
-        >
-          Enter
-        </button>
-
-        <p
-          class="selected"
-          id="gateMessage"
-        ></p>
-
+        <p class="label">Don't snoop if you're not Amanda!</p>
+        <h2>For Amanda's eyes only 👀</h2>
+        <p class="subtitle"> Enter our room number (with special characters included)</p>
+        <input type="text" id="roomInput" placeholder="Type here..."/>
+        <button class="btn" id="enterBtn">Enter</button>
+        <p class="selected" id="gateMessage"></p>
       </div>
-
     </section>
 
-
-
-    <!-- =========================
-         INTRO SCREEN
-    ========================== -->
-
-    <section
-      class="screen"
-      id="intro"
-    >
-
+<!--INTRO SCREEN-->
+    <section class="screen" id="intro">
       <div class="card hero">
-
-        <p class="label">
-          To Amanda,
-        </p>
-
-        <h1>
-          Happy 23rd Birthday ❤️
-        </h1>
-
-        <p class="subtitle">
-          A very special birthday-te surprise
-          on your birthday hehe
-        </p>
-
+        <p class="label">To Amanda,</p>
+        <h1>Happy 23rd Birthday ❤️</h1>
+        <p class="subtitle">A very special birthday-te surprise on your birthday hehe</p>
         <div class="intro-media">
-
-          <img
-            src="./assets/kirby-birthday-gif.gif"
-            alt="Kirby Birthday Gif"
-            class="intro-gif"
-          />
-
+          <img src="./assets/kirby-birthday-gif.gif" alt="Kirby Birthday Gif" class="intro-gif"/>
         </div>
-
-        <button
-          class="btn"
-          id="startBtn"
-        >
-          Start
-        </button>
-
+        <button class="btn" id="startBtn">Start</button>
       </div>
-
     </section>
-
-
-
-    <!-- =========================
-         DATE SCREEN
-    ========================== -->
-
-    <section
-      class="screen"
-      id="dateScreen"
-    >
-
+    
+<!--DATE SCREEN-->
+    <section class="screen" id="dateScreen">
       <div class="card">
-
-        <p class="label">
-          Step 1
-        </p>
-
-        <h2>
-          Choose a date
-        </h2>
-
-        <p class="subtitle">
-          Pick when you want your birthday-te to be ~
-        </p>
-
-
+        <p class="label">Step 1</p>
+        <h2>Choose a date</h2>
+        <p class="subtitle">Pick when you want your birthday-te to be ~</p>
         <div class="choices">
-
-          <button
-            class="choice-btn date-btn"
-            data-date="1 Aug 2026"
-          >
-            1 Aug (Saturday)
-          </button>
-
-          <button
-            class="choice-btn date-btn"
-            data-date="7 Aug 2026"
-          >
-            7 Aug (Friday after NDP half day!)
-          </button>
-
-          <button
-            class="choice-btn date-btn"
-            data-date="8 Aug 2026"
-          >
-            8 Aug (Saturday)
-          </button>
-
-          <button
-            class="choice-btn date-btn"
-            data-date="10 Aug 2026"
-          >
-            10 Aug (Monday)
-          </button>
-
+          <button class="choice-btn date-btn" data-date="1 Aug 2026">1 Aug (Saturday)</button>
+          <button class="choice-btn date-btn" data-date="7 Aug 2026">7 Aug (Friday after NDP half day!)</button>
+          <button class="choice-btn date-btn" data-date="8 Aug 2026">8 Aug (Saturday)</button>
+          <button class="choice-btn date-btn" data-date="10 Aug 2026">10 Aug (Monday)</button>
         </div>
 
-
-        <p
-          class="selected"
-          id="dateResult"
-        ></p>
-
-
+        <p class="selected" id="dateResult"></p>
+        
         <div class="date-note">
-
-          <p>
-
-            <strong>
-              Note from Sharon:
-            </strong>
-
-            <br><br>
-
-            I know I originally wrote on your planner
-            for 1 Aug to be the birthday-te but I also
-            wanted to ask if you would prefer the weekend
-            after since it's a long weekend and also with
-            our NDP half day YAY cause was thinking abt
-            SMUFM on 2 Aug also then at least this weekend
+          <p><strong>Note from Sharon:</strong><br><br>
+            I know I originally wrote on your planner for 1 Aug to be the birthday-te but I also wanted to ask if you would prefer the weekend
+            after since it's a long weekend and also with our NDP half day YAY cause was thinking abt SMUFM on 2 Aug also then at least this weekend
             u got a full day of rest ~
-
             <br><br>
-
-            So yess that was my thought process and ofc
-            you should choose the best one for you
-            I'm free for all of them :D
-
+            So yess that was my thought process and ofc you should choose the best one for you I'm free for all of them :D
           </p>
-
         </div>
 
-
-        <button
-          class="btn next-btn"
-          id="toMemories"
-          disabled
-        >
-          Continue
-        </button>
-
+        <button class="btn next-btn" id="toMemories" disabled>Continue</button>
       </div>
-
     </section>
 
-
-
-    <!-- =========================
-         MEMORIES / MESSAGE SCREEN
-    ========================== -->
-
-    <section
-      class="screen"
-      id="memoriesScreen"
-    >
-
+<!--MEMORIES / MESSAGE SCREEN-->
+    <section class="screen" id="memoriesScreen">
       <div class="card memories-card">
-
-        <p class="label">
-          Step 2
-        </p>
-
-        <h2>
-          The Itinerary 🤩
-        </h2>
-
-        <p class="subtitle">
-          But first...
-        </p>
-
+        <p class="label">Step 2</p>
+        <h2>The Itinerary 🤩</h2>
+        <p class="subtitle">But first...</p>
 
         <div class="memory-images">
-
-          <img
-            src="./assets/sharon-pokopia-shirt.jpg"
-            alt="Sharon Pokopia Shirt"
-          />
-
-          <img
-            src="./assets/amanda-pokopia-shirt.jpg"
-            alt="Amanda Pokopia Shirt"
-          />
-
+          <img src="./assets/sharon-pokopia-shirt.jpg" alt="Sharon Pokopia Shirt"/>
+          <img src="./assets/amanda-pokopia-shirt.jpg" alt="Amanda Pokopia Shirt"/>
         </div>
-
 
         <div class="memory-letter">
-
-          <p>
-            You'll get to see and choose some activities
-            for our birthday-te itinerary later hehe BUT
-            FIRST I wanted to plan this activity for us
-            cause idk if you remember when I sent into the
-            communication group chat that day I was at the
-            'design your own Uniqlo shirt' thing and I
+          <p>You'll get to see and choose some activitiesfor our birthday-te itinerary later hehe BUT FIRST I wanted to plan this activity for us
+            cause idk if you remember when I sent into the communicatORS group chat that day I was at the "design your own Uniqlo shirt" thing and I
             actually wanted to get the Pokopia one that day
           </p>
-
           <p>
-            But then as I was designing it I realised the
-            character designs looked kind of just like our
-            Pokopia characters and they had the designs of
-            the keychains u got for us too so I wanted us
-            to actually get the shirts together, especially
-            the actual experience of designing and getting
-            together too, since we've both got Uniqlo
-            sweaters for each other on our own but this time
-            we get to experience it together :)
+            But then as I was designing it I realised the character designs looked kind of just like our Pokopia characters and they had the designs of
+            the keychains u got for us too so I wanted us to actually get the shirts together, especially the actual experience of designing and getting
+            together too, since we've both got Uniqlo sweaters for each other on our own but this time we get to experience it together :)
           </p>
-
         </div>
 
 
-        <button
-          class="btn"
-          id="toVibe"
-        >
-          Continue
-        </button>
-
+        <button class="btn" id="toVibe">Continue</button>
       </div>
-
     </section>
 
-
-
-    <!-- =========================
-         VIBE CHOICE SCREEN
-    ========================== -->
-
+<!--VIBE CHOICE SCREEN-->
     <section
       class="screen"
       id="vibeScreen"
@@ -552,7 +338,7 @@
     <section class="screen" id="summaryScreen">
       <div class="card">
         <p class="label">Final step</p>
-        <h2>Your birthday-te plan 🥳</h2>
+        <h2>Your birthday-te plan! 🥳</h2>
         <img src="./assets/amanda-kirby-cafe-birthday.jpg" alt="Amanda Kirby Cafe Birthday" class="summary-image">
 
         <p class="summary" id="summaryText"></p>
