@@ -104,3 +104,12 @@ Wheel pick: ${state.wheel || 'Not spun yet'}`;
 
   show('summaryScreen');
 });
+
+document.querySelectorAll(".surprise-card").forEach(card => {
+  card.addEventListener("click", (event) => {
+    // Don't open/close the card when clicking the checkbox
+    if (event.target.tagName === "INPUT") return;
+
+    card.classList.toggle("opened");
+  });
+});
