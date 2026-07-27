@@ -113,3 +113,10 @@ document.querySelectorAll(".surprise-card").forEach(card => {
     card.classList.toggle("opened");
   });
 });
+
+const toDate = document.getElementById("toDate");
+
+toDate.addEventListener("click", () => {
+  document.getElementById("memoriesScreen").classList.remove("active");
+  document.getElementById("dateScreen").classList.add("active");
+});
