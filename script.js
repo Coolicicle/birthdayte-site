@@ -34,6 +34,10 @@ function checkRoom() {
     show('intro');
   } else {
     gateMessage.textContent = 'Nope try again 🤔';
+
+    gateMessage.classList.remove('flicker');
+    void gateMessage.offsetWidth;
+    gateMessage.classList.add('flicker');
   }
 }
 
