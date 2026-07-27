@@ -1,9 +1,14 @@
 const screens = [...document.querySelectorAll('.screen')];
 
 function show(id) {
-  screens.forEach(screen => screen.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  screens.forEach(s => s.classList.toggle('active', s.id === id));
 }
+
+const state = {
+  date: '',
+  activities: [],
+  wheel: ''
+};
 
 const roomInput = document.getElementById('roomInput');
 const enterBtn = document.getElementById('enterBtn');
@@ -21,13 +26,7 @@ const wheelResult = document.getElementById('wheelResult');
 const summaryText = document.getElementById('summaryText');
 const telegramLink = document.getElementById('telegramLink');
 
-const state = {
-  date: '',
-  activities: [],
-  wheel: ''
-};
-
-enterBtn.addEventListener('click', () => {
+function checkRoom() {
   const answer = roomInput.value.trim();
 
   if (answer === '18-153') {
@@ -36,25 +35,28 @@ enterBtn.addEventListener('click', () => {
   } else {
     gateMessage.textContent = 'Wrong answer. Try again.';
   }
+}
+
+enterBtn.addEventListener('click', checkRoom);
+
+roomInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    checkRoom();
+  }
 });
 
-startBtn.addEventListener('click', () => {
-  show('dateScreen');
-});
+startBtn.addEventListener('click', () => show('dateScreen'));
 
-dateBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    state.date = btn.dataset.date;
-    dateBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    dateResult.textContent = `Chosen date: ${state.date}`;
-    toActivities.disabled = false;
-  });
-});
+dateBtns.forEach(btn => btn.addEventListener('click', () => {
+  state.date = btn.dataset.date;
+  dateBtns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  dateResult.textContent = `Chosen date: ${state.date}`;
+  toActivities.disabled = false;
+}));
 
-toActivities.addEventListener('click', () => {
-  show('activitiesScreen');
-});
+toActivities.addEventListener('click', () => show('activitiesScreen'));
 
 toWheel.addEventListener('click', () => {
   state.activities = [...document.querySelectorAll('.checks input:checked')].map(i => i.value);
