@@ -1,8 +1,13 @@
-const screens = [...document.querySelectorAll('.screen')];
+const screens = [
+  ...document.querySelectorAll('.screen')
+];
 
 function show(id) {
   screens.forEach(screen => {
-    screen.classList.toggle('active', screen.id === id);
+    screen.classList.toggle(
+      'active',
+      screen.id === id
+    );
   });
 }
 
@@ -22,38 +27,62 @@ const state = {
 // ELEMENTS
 // =========================
 
-const roomInput = document.getElementById('roomInput');
-const enterBtn = document.getElementById('enterBtn');
-const gateMessage = document.getElementById('gateMessage');
+const roomInput =
+  document.getElementById('roomInput');
 
-const startBtn = document.getElementById('startBtn');
-const toDate = document.getElementById('toDate');
+const enterBtn =
+  document.getElementById('enterBtn');
+
+const gateMessage =
+  document.getElementById('gateMessage');
+
+const startBtn =
+  document.getElementById('startBtn');
+
+const toDate =
+  document.getElementById('toDate');
 
 const dateBtns = [
   ...document.querySelectorAll('.date-btn')
 ];
 
-const dateResult = document.getElementById('dateResult');
-const toActivities = document.getElementById('toActivities');
-const toWheel = document.getElementById('toWheel');
+const dateResult =
+  document.getElementById('dateResult');
 
-const toSummary = document.getElementById('toSummary');
-const spinBtn = document.getElementById('spinBtn');
+const toActivities =
+  document.getElementById('toActivities');
 
-const wheel = document.getElementById('wheel');
-const wheelResult = document.getElementById('wheelResult');
+const toWheel =
+  document.getElementById('toWheel');
 
-const summaryText = document.getElementById('summaryText');
-const telegramLink = document.getElementById('telegramLink');
+const toSummary =
+  document.getElementById('toSummary');
+
+const spinBtn =
+  document.getElementById('spinBtn');
+
+const wheel =
+  document.getElementById('wheel');
+
+const wheelResult =
+  document.getElementById('wheelResult');
+
+const summaryText =
+  document.getElementById('summaryText');
+
+const telegramLink =
+  document.getElementById('telegramLink');
 
 
 // =========================
-// PASSWORD SCREEN
+// PASSWORD → INTRO
 // =========================
 
 function checkRoom() {
 
-  const answer = roomInput.value.trim();
+  const answer =
+    roomInput.value.trim();
+
 
   if (answer === '18-153') {
 
@@ -63,13 +92,18 @@ function checkRoom() {
 
   } else {
 
-    gateMessage.textContent = 'Nope try again 🤔';
+    gateMessage.textContent =
+      'Nope try again 🤔';
 
-    gateMessage.classList.remove('flicker');
+    gateMessage.classList.remove(
+      'flicker'
+    );
 
     void gateMessage.offsetWidth;
 
-    gateMessage.classList.add('flicker');
+    gateMessage.classList.add(
+      'flicker'
+    );
 
   }
 
@@ -84,11 +118,11 @@ enterBtn.addEventListener(
 
 roomInput.addEventListener(
   'keydown',
-  (e) => {
+  (event) => {
 
-    if (e.key === 'Enter') {
+    if (event.key === 'Enter') {
 
-      e.preventDefault();
+      event.preventDefault();
 
       checkRoom();
 
@@ -131,24 +165,38 @@ toDate.addEventListener(
 // =========================
 
 dateBtns.forEach(
-  btn => {
+  button => {
 
-    btn.addEventListener(
+    button.addEventListener(
       'click',
       () => {
 
-        state.date = btn.dataset.date;
+        state.date =
+          button.dataset.date;
+
 
         dateBtns.forEach(
-          b => b.classList.remove('active')
+          dateButton => {
+
+            dateButton.classList.remove(
+              'active'
+            );
+
+          }
         );
 
-        btn.classList.add('active');
+
+        button.classList.add(
+          'active'
+        );
+
 
         dateResult.textContent =
           `Chosen date: ${state.date}`;
 
-        toActivities.disabled = false;
+
+        toActivities.disabled =
+          false;
 
       }
     );
@@ -175,16 +223,22 @@ toActivities.addEventListener(
 // SURPRISE CARD OPENING
 // =========================
 
-document
-  .querySelectorAll('.surprise-card')
-  .forEach(card => {
+const surpriseCards = [
+  ...document.querySelectorAll(
+    '.surprise-card'
+  )
+];
+
+
+surpriseCards.forEach(
+  card => {
 
     card.addEventListener(
       'click',
       (event) => {
 
-        // Don't open/close the card
-        // when clicking the checkbox
+        // Clicking the checkbox should
+        // not close the card
 
         if (
           event.target.tagName === 'INPUT'
@@ -192,12 +246,16 @@ document
           return;
         }
 
-        card.classList.toggle('opened');
+
+        card.classList.toggle(
+          'opened'
+        );
 
       }
     );
 
-  });
+  }
+);
 
 
 // =========================
@@ -218,7 +276,7 @@ toWheel.addEventListener(
 
 
     if (
-      !state.activities.length
+      state.activities.length === 0
     ) {
 
       alert(
@@ -245,30 +303,42 @@ spinBtn.addEventListener(
   () => {
 
     if (
-      !state.activities.length
+      state.activities.length === 0
     ) {
       return;
     }
 
 
-    wheel.classList.remove('spin');
+    wheel.classList.remove(
+      'spin'
+    );
+
 
     void wheel.offsetWidth;
 
-    wheel.classList.add('spin');
 
-    spinBtn.disabled = true;
+    wheel.classList.add(
+      'spin'
+    );
+
+
+    spinBtn.disabled =
+      true;
 
 
     setTimeout(
       () => {
 
+        const randomIndex =
+          Math.floor(
+            Math.random() *
+            state.activities.length
+          );
+
+
         state.wheel =
           state.activities[
-            Math.floor(
-              Math.random() *
-              state.activities.length
-            )
+            randomIndex
           ];
 
 
@@ -276,9 +346,12 @@ spinBtn.addEventListener(
           `Wheel picked: ${state.wheel}`;
 
 
-        toSummary.disabled = false;
+        toSummary.disabled =
+          false;
 
-        spinBtn.disabled = false;
+
+        spinBtn.disabled =
+          false;
 
       },
       3000
@@ -311,17 +384,19 @@ Wheel pick: ${state.wheel || 'Not spun yet'}`;
 
 
     const telegramText =
-      encodeURIComponent(text);
+      encodeURIComponent(
+        text
+      );
 
 
-    const telegramUrl =
+    const pageUrl =
       encodeURIComponent(
         window.location.href
       );
 
 
     telegramLink.href =
-      `https://t.me/share/url?url=${telegramUrl}&text=${telegramText}`;
+      `https://t.me/share/url?url=${pageUrl}&text=${telegramText}`;
 
 
     show('summaryScreen');
