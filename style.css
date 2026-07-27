@@ -352,32 +352,36 @@ h2 {
 
 .surprise-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin: 30px 0;
 }
 
 .surprise-card {
-  height: 220px;
+  height: 240px;
   cursor: pointer;
-  perspective: 1000px;
 }
 
+/* Card container */
 .envelope {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-/* The hidden activity behind the front */
+/* =========================
+   ACTIVITY REVEAL
+========================= */
+
 .activity-reveal {
   position: absolute;
   inset: 0;
 
   background: #fffdf8;
-  border: 2px solid #e8d8c8;
-  border-radius: 12px;
-  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.12);
+  border: 2px solid #e5d9cc;
+  border-radius: 16px;
 
   display: flex;
   flex-direction: column;
@@ -386,17 +390,31 @@ h2 {
 
   text-align: center;
 
-  z-index: 1;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* The closed surprise card */
+.activity-reveal h3 {
+  margin: 0 0 24px;
+  font-size: 1.25rem;
+}
+
+.activity-reveal label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* =========================
+   CLOSED SURPRISE CARD
+========================= */
+
 .envelope-front {
   position: absolute;
   inset: 0;
 
-  background: #f7f0e8;
-  border: 2px solid #d8cabb;
-  border-radius: 12px;
+  background: #f8f0e7;
+  border: 2px solid #dfd0c1;
+  border-radius: 16px;
 
   display: flex;
   flex-direction: column;
@@ -407,41 +425,43 @@ h2 {
 
   z-index: 2;
 
-  transition: transform 0.7s ease;
-  transform-origin: top center;
+  transition:
+    transform 0.7s ease,
+    opacity 0.5s ease;
 }
 
 .envelope-front span {
-  font-size: 36px;
-  margin-bottom: 12px;
+  font-size: 42px;
+  margin-bottom: 14px;
 }
 
 .envelope-front p {
-  margin: 5px 0;
+  margin: 0 0 10px;
+
   font-family: Georgia, serif;
   font-style: italic;
+  font-size: 1.1rem;
 }
 
 .envelope-front small {
   color: #777;
-  margin-top: 8px;
 }
 
-/* Open the card */
+
+/* =========================
+   OPEN ANIMATION
+========================= */
+
 .surprise-card.opened .envelope-front {
-  transform: rotateX(-110deg);
+  transform: translateY(-105%);
+  opacity: 0;
 }
 
-/* Activity text */
-.activity-reveal h3 {
-  margin-bottom: 20px;
-}
 
-.activity-reveal label {
-  cursor: pointer;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* Responsive layout */
 @media (max-width: 600px) {
   .surprise-cards {
     grid-template-columns: 1fr;
