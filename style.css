@@ -334,6 +334,13 @@ h2 {
   cursor: pointer;
 }
 
+.activity-desc {
+  margin: -12px 0 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #777;
+}
+
 .envelope-front {
   position: absolute;
   inset: 0;
