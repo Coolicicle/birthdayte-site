@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Birthday-te Surprise</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
 </head>
+
 
 <body>
 
   <main class="app">
 
-    <!-- PASSWORD SCREEN -->
-    <section class="screen active" id="gateScreen">
+
+    <!-- =========================
+         PASSWORD SCREEN
+    ========================== -->
+
+    <section
+      class="screen active"
+      id="gateScreen"
+    >
+
       <div class="card password-card">
 
         <p class="label">
@@ -24,7 +42,8 @@
         </h2>
 
         <p class="subtitle">
-          Enter our room number (with special characters included)
+          Enter our room number
+          (with special characters included)
         </p>
 
         <input
@@ -46,11 +65,20 @@
         ></p>
 
       </div>
+
     </section>
 
 
-    <!-- INTRO SCREEN -->
-    <section class="screen" id="intro">
+
+    <!-- =========================
+         INTRO SCREEN
+    ========================== -->
+
+    <section
+      class="screen"
+      id="intro"
+    >
+
       <div class="card hero">
 
         <p class="label">
@@ -62,15 +90,18 @@
         </h1>
 
         <p class="subtitle">
-          A very special birthday-te surprise on your birthday hehe
+          A very special birthday-te surprise
+          on your birthday hehe
         </p>
 
         <div class="intro-media">
+
           <img
             src="./assets/kirby-birthday-gif.gif"
             alt="Kirby Birthday Gif"
             class="intro-gif"
           />
+
         </div>
 
         <button
@@ -81,68 +112,20 @@
         </button>
 
       </div>
+
     </section>
 
 
-    <!-- MEMORIES / MESSAGE SCREEN -->
-    <section class="screen" id="memoriesScreen">
-      <div class="card memories-card">
 
-        <p class="label">
-          Step 2
-        </p>
+    <!-- =========================
+         DATE SCREEN
+    ========================== -->
 
-        <h2>
-          The Itinerary 🤩
-        </h2>
+    <section
+      class="screen"
+      id="dateScreen"
+    >
 
-        <p class="subtitle">
-          But first...
-        </p>
-
-        <div class="memory-images">
-
-          <img
-            src="./assets/sharon-pokopia-shirt.jpg"
-            alt="Sharon Pokopia Shirt"
-          />
-
-          <img
-            src="./assets/amanda-pokopia-shirt.jpg"
-            alt="Amanda Pokopia Shirt"
-          />
-
-        </div>
-
-        <div class="memory-letter">
-
-          <p> You'll get to see and choose some acitivities for our birthday-te itinerary later hehe
-            BUT FIRST I wanted to plan this activity for us cause idk if you remember when I sent into 
-            the communicators group chat that day that I was at the "design your own uniqlo shirt" thing 
-            and I actually wanted to get the pokopia one that day </p>
-          <br>
-          <p> But then as I was designing it I realised the character designs looked kind of just like our 
-            pokopia characters and they had the designs of the keychains u got for us too so I wanted us
-            to actually get the shirts together, especially the actual experience of designing and getting 
-            together too, since we've both got uniqlo sweaters for each other on our own but 
-            this time we get to experience it together :)
-          </p>
-
-        </div>
-
-        <button
-          class="btn"
-          id="toDate"
-        >
-          Continue
-        </button>
-
-      </div>
-    </section>
-
-
-    <!-- DATE SCREEN -->
-    <section class="screen" id="dateScreen">
       <div class="card">
 
         <p class="label">
@@ -156,6 +139,7 @@
         <p class="subtitle">
           Pick when you want your birthday-te to be ~
         </p>
+
 
         <div class="choices">
 
@@ -189,10 +173,12 @@
 
         </div>
 
+
         <p
           class="selected"
           id="dateResult"
         ></p>
+
 
         <div class="date-note">
 
@@ -204,20 +190,24 @@
 
             <br><br>
 
-            I know I originally wrote on your planner for 1 Aug to be the
-            birthday-te but I also wanted to ask if you would prefer the
-            weekend after since it's a long weekend and also with our NDP
-            half day YAY cause was thinking abt SMUFM on 2 Aug also then at
-            least this weekend u got a full day of rest ~
+            I know I originally wrote on your planner
+            for 1 Aug to be the birthday-te but I also
+            wanted to ask if you would prefer the weekend
+            after since it's a long weekend and also with
+            our NDP half day YAY cause was thinking abt
+            SMUFM on 2 Aug also then at least this weekend
+            u got a full day of rest ~
 
             <br><br>
 
-            So yess that was my thought process and ofc you should choose
-            the best one for you. I'm free for all of them :D
+            So yess that was my thought process and ofc
+            you should choose the best one for you.
+            I'm free for all of them :D
 
           </p>
 
         </div>
+
 
         <button
           class="btn next-btn"
@@ -228,15 +218,100 @@
         </button>
 
       </div>
+
     </section>
 
 
-    <!-- ACTIVITIES SCREEN -->
-    <section class="screen" id="activitiesScreen">
-      <div class="card">
+
+    <!-- =========================
+         MEMORIES / MESSAGE SCREEN
+    ========================== -->
+
+    <section
+      class="screen"
+      id="memoriesScreen"
+    >
+
+      <div class="card memories-card">
 
         <p class="label">
           Step 2
+        </p>
+
+
+        <div class="memory-images">
+
+          <img
+            src="./assets/photo1.jpg"
+            alt="A memory of us"
+          />
+
+          <img
+            src="./assets/photo2.jpg"
+            alt="Another memory of us"
+          />
+
+        </div>
+
+
+        <div class="memory-letter">
+
+          <p>
+
+            "You'll get to see and choose some activities
+            for our birthday-te itinerary later hehe BUT
+            FIRST I wanted to plan this activity for us
+            cause idk if you remember when I sent into the
+            communication group chat that day I was at the
+            'design your own Uniqlo shirt' thing and I
+            actually wanted to get the Pokopia one that day.
+
+          </p>
+
+
+          <p>
+
+            But then as I was designing it I realised the
+            character designs looked kind of just like our
+            Pokopia characters and they had the designs of
+            the keychains u got for us too so I wanted us
+            to actually get the shirts together, especially
+            the actual experience of designing and getting
+            together too, since we've both got Uniqlo
+            sweaters for each other on our own but this time
+            we get to experience it together :')"
+
+          </p>
+
+        </div>
+
+
+        <button
+          class="btn"
+          id="toActivitiesFromMemories"
+        >
+          Continue
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ACTIVITIES SCREEN
+    ========================== -->
+
+    <section
+      class="screen"
+      id="activitiesScreen"
+    >
+
+      <div class="card">
+
+        <p class="label">
+          Step 3
         </p>
 
         <h2>
@@ -252,6 +327,7 @@
 
 
           <!-- CAFE HOPPING -->
+
           <div class="surprise-card">
 
             <div class="envelope">
@@ -271,6 +347,7 @@
                 </small>
 
               </div>
+
 
               <div class="activity-reveal">
 
@@ -296,7 +373,9 @@
           </div>
 
 
+
           <!-- KARAOKE -->
+
           <div class="surprise-card">
 
             <div class="envelope">
@@ -316,6 +395,7 @@
                 </small>
 
               </div>
+
 
               <div class="activity-reveal">
 
@@ -341,7 +421,9 @@
           </div>
 
 
+
           <!-- DESSERT CAFE -->
+
           <div class="surprise-card">
 
             <div class="envelope">
@@ -361,6 +443,7 @@
                 </small>
 
               </div>
+
 
               <div class="activity-reveal">
 
@@ -386,7 +469,9 @@
           </div>
 
 
+
           <!-- MOVIE NIGHT -->
+
           <div class="surprise-card">
 
             <div class="envelope">
@@ -406,6 +491,7 @@
                 </small>
 
               </div>
+
 
               <div class="activity-reveal">
 
@@ -431,7 +517,9 @@
           </div>
 
 
+
           <!-- DINNER OUTING -->
+
           <div class="surprise-card">
 
             <div class="envelope">
@@ -451,6 +539,7 @@
                 </small>
 
               </div>
+
 
               <div class="activity-reveal">
 
@@ -487,15 +576,24 @@
         </button>
 
       </div>
+
     </section>
 
 
-    <!-- WHEEL SCREEN -->
-    <section class="screen" id="wheelScreen">
+
+    <!-- =========================
+         WHEEL SCREEN
+    ========================== -->
+
+    <section
+      class="screen"
+      id="wheelScreen"
+    >
+
       <div class="card">
 
         <p class="label">
-          Step 3
+          Step 4
         </p>
 
         <h2>
@@ -505,6 +603,7 @@
         <p class="subtitle">
           Let fate choose one of your shortlisted ideas.
         </p>
+
 
         <div class="wheel-wrap">
 
@@ -523,6 +622,7 @@
 
         </div>
 
+
         <button
           class="btn"
           id="spinBtn"
@@ -530,12 +630,14 @@
           Spin
         </button>
 
+
         <p
           class="selected"
           id="wheelResult"
         >
           No result yet.
         </p>
+
 
         <button
           class="btn next-btn"
@@ -546,11 +648,20 @@
         </button>
 
       </div>
+
     </section>
 
 
-    <!-- SUMMARY SCREEN -->
-    <section class="screen" id="summaryScreen">
+
+    <!-- =========================
+         SUMMARY SCREEN
+    ========================== -->
+
+    <section
+      class="screen"
+      id="summaryScreen"
+    >
+
       <div class="card">
 
         <p class="label">
@@ -561,10 +672,12 @@
           Your birthday plan
         </h2>
 
+
         <p
           class="summary"
           id="summaryText"
         ></p>
+
 
         <a
           class="btn telegram-btn"
@@ -577,11 +690,15 @@
         </a>
 
       </div>
+
     </section>
 
+
   </main>
+
 
   <script src="script.js"></script>
 
 </body>
+
 </html>
