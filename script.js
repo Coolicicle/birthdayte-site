@@ -32,7 +32,7 @@ const state = {
 
   activities: [],
 
-  wheel: ''
+  vibe: ''
 
 };
 
@@ -41,6 +41,9 @@ const state = {
 // =========================
 // ELEMENTS
 // =========================
+
+
+// PASSWORD
 
 const roomInput =
   document.getElementById('roomInput');
@@ -51,16 +54,20 @@ const enterBtn =
 const gateMessage =
   document.getElementById('gateMessage');
 
+
+// NAVIGATION
+
 const startBtn =
   document.getElementById('startBtn');
 
-const toActivities =
-  document.getElementById('toActivities');
+const toMemories =
+  document.getElementById('toMemories');
 
-const toActivitiesFromMemories =
-  document.getElementById(
-    'toActivitiesFromMemories'
-  );
+const toVibe =
+  document.getElementById('toVibe');
+
+
+// DATE
 
 const dateBtns = [
 
@@ -73,20 +80,26 @@ const dateBtns = [
 const dateResult =
   document.getElementById('dateResult');
 
-const toWheel =
-  document.getElementById('toWheel');
 
-const toSummary =
-  document.getElementById('toSummary');
+// VIBE OPTIONS
 
-const spinBtn =
-  document.getElementById('spinBtn');
+const homeOption =
+  document.getElementById('homeOption');
 
-const wheel =
-  document.getElementById('wheel');
+const dayOutOption =
+  document.getElementById('dayOutOption');
 
-const wheelResult =
-  document.getElementById('wheelResult');
+
+// ACTIVITIES
+
+const homeToSummary =
+  document.getElementById('homeToSummary');
+
+const dayOutToSummary =
+  document.getElementById('dayOutToSummary');
+
+
+// SUMMARY
 
 const summaryText =
   document.getElementById('summaryText');
@@ -106,13 +119,17 @@ function checkRoom() {
     roomInput.value.trim();
 
 
-  if (answer === '18-153') {
+  if (
+    answer === '18-153'
+  ) {
 
     gateMessage.textContent = '';
 
     show('intro');
 
-  } else {
+  }
+
+  else {
 
     gateMessage.textContent =
       'Nope try again 🤔';
@@ -186,6 +203,7 @@ dateBtns.forEach(
       'click',
       () => {
 
+
         state.date =
           button.dataset.date;
 
@@ -210,7 +228,7 @@ dateBtns.forEach(
           `Chosen date: ${state.date}`;
 
 
-        toActivities.disabled =
+        toMemories.disabled =
           false;
 
       }
@@ -225,7 +243,7 @@ dateBtns.forEach(
 // DATE → MEMORIES
 // =========================
 
-toActivities.addEventListener(
+toMemories.addEventListener(
   'click',
   () => {
 
@@ -237,14 +255,56 @@ toActivities.addEventListener(
 
 
 // =========================
-// MEMORIES → ACTIVITIES
+// MEMORIES → VIBE CHOICE
 // =========================
 
-toActivitiesFromMemories.addEventListener(
+toVibe.addEventListener(
   'click',
   () => {
 
-    show('activitiesScreen');
+    show('vibeScreen');
+
+  }
+);
+
+
+
+// =========================
+// VIBE → HOME ACTIVITIES
+// =========================
+
+homeOption.addEventListener(
+  'click',
+  () => {
+
+    state.vibe =
+      'Pookies chill at home';
+
+
+    show(
+      'homeActivitiesScreen'
+    );
+
+  }
+);
+
+
+
+// =========================
+// VIBE → DAY OUT ACTIVITIES
+// =========================
+
+dayOutOption.addEventListener(
+  'click',
+  () => {
+
+    state.vibe =
+      'Pookies day out';
+
+
+    show(
+      'dayOutActivitiesScreen'
+    );
 
   }
 );
@@ -272,8 +332,8 @@ surpriseCards.forEach(
       event => {
 
 
-        // Do not close the card
-        // when clicking the checkbox
+        // Clicking the checkbox itself
+        // should not close the card
 
         if (
           event.target.tagName ===
@@ -298,160 +358,105 @@ surpriseCards.forEach(
 
 
 // =========================
-// ACTIVITIES → WHEEL
+// COLLECT ACTIVITIES
 // =========================
 
-toWheel.addEventListener(
-  'click',
-  () => {
+function getSelectedActivities() {
 
 
-    state.activities = [
+  state.activities = [
 
-      ...document.querySelectorAll(
-        '.activity-reveal input:checked'
-      )
+    ...document.querySelectorAll(
+      '.activity-reveal input:checked'
+    )
 
-    ].map(
-      input => input.value
+  ].map(
+    input => input.value
+  );
+
+
+}
+
+
+
+// =========================
+// ACTIVITIES → SUMMARY
+// =========================
+
+function goToSummary() {
+
+
+  getSelectedActivities();
+
+
+  if (
+    state.activities.length === 0
+  ) {
+
+    alert(
+      'Please choose at least one activity first.'
     );
 
 
-    if (
-      state.activities.length === 0
-    ) {
-
-      alert(
-        'Please choose at least one activity first.'
-      );
-
-      return;
-
-    }
-
-
-    show('wheelScreen');
+    return;
 
   }
-);
 
 
-
-// =========================
-// SPIN THE WHEEL
-// =========================
-
-spinBtn.addEventListener(
-  'click',
-  () => {
-
-
-    if (
-      state.activities.length === 0
-    ) {
-
-      return;
-
-    }
-
-
-    wheel.classList.remove(
-      'spin'
-    );
-
-
-    void wheel.offsetWidth;
-
-
-    wheel.classList.add(
-      'spin'
-    );
-
-
-    spinBtn.disabled =
-      true;
-
-
-    setTimeout(
-      () => {
-
-
-        const randomIndex =
-          Math.floor(
-
-            Math.random() *
-            state.activities.length
-
-          );
-
-
-        state.wheel =
-          state.activities[
-            randomIndex
-          ];
-
-
-        wheelResult.textContent =
-          `Wheel picked: ${state.wheel}`;
-
-
-        toSummary.disabled =
-          false;
-
-
-        spinBtn.disabled =
-          false;
-
-
-      },
-      3000
-    );
-
-  }
-);
-
-
-
-// =========================
-// WHEEL → SUMMARY
-// =========================
-
-toSummary.addEventListener(
-  'click',
-  () => {
-
-
-    const text =
+  const text =
 `Birthday plan:
+
 Date: ${state.date || 'Not chosen'}
-Shortlist: ${state.activities.join(', ') || 'None'}
-Wheel pick: ${state.wheel || 'Not spun yet'}`;
+
+Birthday-te vibe: ${state.vibe || 'Not chosen'}
+
+Activities:
+${state.activities.join(', ')}`;
 
 
-    summaryText.textContent =
-      text.replaceAll(
-        '\n',
-        ' • '
-      );
+  summaryText.innerHTML =
+    text.replace(
+      /\n/g,
+      '<br>'
+    );
 
 
-    const telegramText =
-      encodeURIComponent(
-        text
-      );
+  const telegramText =
+    encodeURIComponent(
+      text
+    );
 
 
-    const pageUrl =
-      encodeURIComponent(
-        window.location.href
-      );
+  const pageUrl =
+    encodeURIComponent(
+      window.location.href
+    );
 
 
-    telegramLink.href =
-      `https://t.me/share/url?url=${pageUrl}&text=${telegramText}`;
+  telegramLink.href =
+    `https://t.me/share/url?url=${pageUrl}&text=${telegramText}`;
 
 
-    show('summaryScreen');
+  show(
+    'summaryScreen'
+  );
 
-  }
+}
+
+
+
+// HOME ACTIVITIES → SUMMARY
+
+homeToSummary.addEventListener(
+  'click',
+  goToSummary
+);
+
+
+
+// DAY OUT ACTIVITIES → SUMMARY
+
+dayOutToSummary.addEventListener(
+  'click',
+  goToSummary
 );
