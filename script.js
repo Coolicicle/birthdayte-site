@@ -38,8 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateSummary() {
   const activitiesText = state.activities.join(", ");
 
-  const text = `Date: ${state.date}
-Activities: Get matching pokopia shirts + ${activitiesText}`;
+  const text =
+    `Date: ${state.date}\n` +
+    `Activities: Get matching pokopia shirts + ${activitiesText}`;
 
   summaryText.textContent = text;
 
