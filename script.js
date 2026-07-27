@@ -33,7 +33,7 @@ function checkRoom() {
     gateMessage.textContent = '';
     show('intro');
   } else {
-    gateMessage.textContent = 'Wrong answer. Try again.';
+    gateMessage.textContent = 'Nope try again 🤔';
   }
 }
 
