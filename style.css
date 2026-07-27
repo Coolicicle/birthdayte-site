@@ -5,29 +5,41 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("./assets/collage.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   min-height: 100vh;
+  background: #f9dbe7;
 }
 
 .app {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  background: transparent;
 }
 
 .screen {
   display: none;
   width: 100%;
+  min-height: 100vh;
   max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
 .screen.active {
-  display: block;
+  display: grid;
+  place-items: center;
+}
+
+#gateScreen {
+  background: #f9dbe7;
+}
+
+#intro,
+#dateScreen,
+#activitiesScreen,
+#wheelScreen,
+#summaryScreen {
+  background-image: url("./assets/collage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .card {
@@ -171,14 +183,14 @@ h2 {
   max-width: 100%;
 }
 
-@keyframes flicker {
-  from { transform: scaleY(1); }
-  to { transform: scaleY(1.08); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+#roomInput {
+  width: 100%;
+  max-width: 260px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  font-size: 1rem;
+  margin-top: 16px;
 }
 
 @media (max-width: 520px) {
@@ -190,18 +202,4 @@ h2 {
     width: 220px;
     height: 220px;
   }
-}
-
-#roomInput {
-  width: 100%;
-  max-width: 260px;
-  padding: 12px 14px;
-  border: 1px solid #ddd;
-  border-radius: 14px;
-  font-size: 1rem;
-  margin-top: 16px;
-}
-
-#gateScreen {
-  background: #f9dbe7;
 }
