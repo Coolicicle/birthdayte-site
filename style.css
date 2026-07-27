@@ -35,11 +35,11 @@ body {
 
 /* Backgrounds */
 
-#gateScreen,
-#intro {
+#gateScreen {
   background: #f9dbe7;
 }
 
+#intro
 #dateScreen,
 #memoriesScreen,
 #activitiesScreen,
