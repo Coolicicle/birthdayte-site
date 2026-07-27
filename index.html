@@ -40,16 +40,58 @@
         <p class="label">Step 1</p>
         <h2>Choose a date</h2>
         <p class="subtitle">Pick when you want your birthday-te to be ~</p>
-
+    
         <div class="choices">
-          <button class="choice-btn date-btn" data-date="1 Aug 2026">1 Aug (Saturday)</button>
-          <button class="choice-btn date-btn" data-date="7 Aug 2026">7 Aug (Friday after NDP half day!)</button>
-          <button class="choice-btn date-btn" data-date="8 Aug 2026">8 Aug (Saturday)</button>
-          <button class="choice-btn date-btn" data-date="10 Aug 2026">10 Aug (Monday)</button>
+          <button
+            class="choice-btn date-btn"
+            data-date="1 Aug 2026"
+          >
+            1 Aug (Saturday)
+          </button>
+    
+          <button
+            class="choice-btn date-btn"
+            data-date="7 Aug 2026"
+          >
+            7 Aug (Friday after NDP half day!)
+          </button>
+    
+          <button
+            class="choice-btn date-btn"
+            data-date="8 Aug 2026"
+          >
+            8 Aug (Saturday)
+          </button>
+    
+          <button
+            class="choice-btn date-btn"
+            data-date="10 Aug 2026"
+          >
+            10 Aug (Monday)
+          </button>
         </div>
-
+    
         <p class="selected" id="dateResult"></p>
-        <button class="btn next-btn" id="toActivities" disabled>Continue</button>
+    
+        <div class="rationale-box">
+          <label for="dateNote">
+            Why I chose these dates:
+          </label>
+    
+          <textarea
+            id="dateNote"
+            placeholder="Type your rationale here..."
+          ></textarea>
+        </div>
+    
+        <button
+          class="btn next-btn"
+          id="toActivities"
+          disabled
+        >
+          Continue
+        </button>
+    
       </div>
     </section>
 
