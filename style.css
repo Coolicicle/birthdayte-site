@@ -213,24 +213,7 @@ h2 {
 }
 
 .flicker {
-  animation: wrongAnswerFlicker 0.4s ease;
-}
-@keyframes wrongAnswerFlicker {
-  0%, 100% {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-.flicker {
-  animation: wrongAnswerFlicker 0.4s ease;
+  animation: wrongAnswerFlicker 0.8s ease;
 }
 
 @media (max-width: 520px) {
