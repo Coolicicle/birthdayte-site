@@ -404,14 +404,9 @@ function goToSummary() {
 
 
   const text =
-`Birthday plan:
+`Date: ${state.date || 'Not chosen'}
 
-Date: ${state.date || 'Not chosen'}
-
-Birthday-te vibe: ${state.vibe || 'Not chosen'}
-
-Activities:
-${state.activities.join(', ')}`;
+Activities: Get matching pokopia shirts + ${state.activities.join(', ')}`;
 
 
   summaryText.innerHTML =
