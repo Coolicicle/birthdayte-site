@@ -126,31 +126,22 @@ min-height: 24px;
 font-weight: 700;
 }
 
-/* Wrong-answer flicker animation */
 @keyframes wrongAnswerFlicker {
-0% {
-opacity: 1;
-}
+  0% {
+    opacity: 1;
+  }
 
-25% {
-opacity: 0;
-}
+  50% {
+    opacity: 0;
+  }
 
-50% {
-opacity: 1;
-}
-
-75% {
-opacity: 0;
-}
-
-100% {
-opacity: 1;
-}
+  100% {
+    opacity: 1;
+  }
 }
 
 .flicker {
-animation: wrongAnswerFlicker 0.8s ease-in-out;
+  animation: wrongAnswerFlicker 0.5s ease-in-out;
 }
 
 .wheel-wrap {
