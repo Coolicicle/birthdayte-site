@@ -1,38 +1,42 @@
 * {
   box-sizing: border-box;
-  }
+}
 
 html,
 body {
-margin: 0;
-padding: 0;
-min-height: 100%;
-font-family: Arial, sans-serif;
-background: #f9dbe7;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  background: #f9dbe7;
 }
 
 body {
-min-height: 100vh;
+  min-height: 100vh;
 }
 
 .app {
-min-height: 100vh;
+  min-height: 100vh;
 }
 
+/* Screens */
+
 .screen {
-display: none;
-width: 100%;
-min-height: 100vh;
-padding: 24px;
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
 }
 
 .screen.active {
-display: grid;
-place-items: center;
+  display: grid;
+  place-items: center;
 }
 
+/* Backgrounds */
+
 #gateScreen {
-background: #f9dbe7;
+  background: #f9dbe7;
 }
 
 #intro,
@@ -40,222 +44,256 @@ background: #f9dbe7;
 #activitiesScreen,
 #wheelScreen,
 #summaryScreen {
-background-image: url("./assets/collage.png");
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+  background-image: url("./assets/collage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-/* Main cards */
+/* Cards */
+
 .card {
-position: relative;
-background: rgba(255, 255, 255, 0.92);
-backdrop-filter: blur(8px);
-border-radius: 24px;
-padding: 32px;
-box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
-text-align: center;
-max-width: 720px;
-width: 100%;
-z-index: 0;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.92)
+    ) padding-box,
+
+    repeating-linear-gradient(
+      45deg,
+      #f5559d 0px,
+      #f5559d 10px,
+      white 10px,
+      white 20px
+    ) border-box;
+
+  border: 12px solid transparent;
+  border-radius: 24px;
+  padding: 32px;
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+  max-width: 720px;
+  width: 100%;
 }
 
-/* Candy-cane border for all cards except the password card */
-.card::before {
-content: "";
-position: absolute;
-inset: -12px;
-border-radius: 36px;
+/* Plain password card */
 
-background: repeating-linear-gradient(
-45deg,
-#f5559d 0px,
-#f5559d 10px,
-white 10px,
-white 20px
-);
-
-z-index: -1;
+.password-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: none;
 }
 
-/* Password card stays plain */
-#gateScreen .card {
-background: rgba(255, 255, 255, 0.88);
-border: none;
-}
-
-#gateScreen .card::before {
-display: none;
-}
+/* Headings */
 
 .hero h1,
 h2 {
-margin: 8px 0 12px;
+  margin: 8px 0 12px;
 }
 
+/* Labels */
+
 .label {
-text-transform: uppercase;
-letter-spacing: 0.2em;
-font-size: 0.75rem;
-color: #f5559d;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #f5559d;
 }
+
+/* Text */
 
 .subtitle,
 .summary {
-line-height: 1.6;
+  line-height: 1.6;
 }
+
+/* Buttons */
 
 .btn,
 .choice-btn,
 .telegram-btn {
-border: 0;
-border-radius: 999px;
-padding: 12px 18px;
-font-size: 1rem;
-cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .btn,
 .telegram-btn {
-display: inline-block;
-background: #f5559d;
-color: white;
-text-decoration: none;
-margin-top: 16px;
+  display: inline-block;
+  background: #f5559d;
+  color: white;
+  text-decoration: none;
+  margin-top: 16px;
 }
 
 .btn:disabled {
-opacity: 0.45;
-cursor: not-allowed;
+  opacity: 0.45;
+  cursor: not-allowed;
 }
+
+/* Choices */
 
 .choices,
 .checks {
-display: grid;
-gap: 12px;
-margin: 20px 0;
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
 }
 
 .choice-btn {
-background: #f3d7e3;
-color: #3a2330;
+  background: #f3d7e3;
+  color: #3a2330;
 }
 
 .choice-btn.active {
-background: #b04b78;
-color: white;
+  background: #b04b78;
+  color: white;
 }
+
+/* Checkboxes */
 
 .checks label {
-background: #fff;
-padding: 12px 14px;
-border-radius: 14px;
-text-align: left;
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-align: left;
 }
+
+/* Selected text */
 
 .selected {
-min-height: 24px;
-font-weight: 700;
+  min-height: 24px;
+  font-weight: 700;
 }
 
-/* Wrong-answer flicker */
+/* Wrong answer flicker */
+
 @keyframes wrongAnswerFlicker {
-0% {
-opacity: 1;
-}
+  0% {
+    opacity: 1;
+  }
 
-40% {
-opacity: 0;
-}
+  40% {
+    opacity: 0;
+  }
 
-100% {
-opacity: 1;
-}
+  100% {
+    opacity: 1;
+  }
 }
 
 .flicker {
-animation: wrongAnswerFlicker 0.25s ease-in-out;
+  animation: wrongAnswerFlicker 0.25s ease-in-out;
 }
 
+/* Wheel */
+
 .wheel-wrap {
-display: grid;
-place-items: center;
-margin: 18px 0;
+  display: grid;
+  place-items: center;
+  margin: 18px 0;
 }
 
 .wheel {
-width: 260px;
-height: 260px;
-border-radius: 50%;
-border: 10px solid #fff;
-position: relative;
-background: conic-gradient(
-#f7b267 0 20%,
-#f4845f 20% 40%,
-#f25f5c 40% 60%,
-#84dcc6 60% 80%,
-#95d5b2 80% 100%
-);
-transition: transform 3s cubic-bezier(.2, .9, .2, 1);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  position: relative;
+
+  background: conic-gradient(
+    #f7b267 0 20%,
+    #f4845f 20% 40%,
+    #f25f5c 40% 60%,
+    #84dcc6 60% 80%,
+    #95d5b2 80% 100%
+  );
+
+  transition: transform 3s cubic-bezier(.2, .9, .2, 1);
 }
 
 .wheel.spin {
-transform: rotate(1440deg);
+  transform: rotate(1440deg);
 }
+
+/* Wheel pointer */
 
 .pointer {
-position: absolute;
-top: -14px;
-left: 50%;
-transform: translateX(-50%);
-width: 0;
-height: 0;
-border-left: 14px solid transparent;
-border-right: 14px solid transparent;
-border-bottom: 24px solid #3a2330;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 24px solid #3a2330;
 }
+
+/* Wheel center */
 
 .wheel-center {
-position: absolute;
-inset: 50%;
-transform: translate(-50%, -50%);
-width: 92px;
-height: 92px;
-border-radius: 50%;
-background: white;
-display: grid;
-place-items: center;
-font-weight: 700;
+  position: absolute;
+  inset: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 92px;
+  height: 92px;
+
+  border-radius: 50%;
+  background: white;
+
+  display: grid;
+  place-items: center;
+
+  font-weight: 700;
 }
 
+/* Intro GIF */
+
 .intro-media {
-margin: 18px auto 0;
-display: grid;
-place-items: center;
+  margin: 18px auto 0;
+  display: grid;
+  place-items: center;
 }
 
 .intro-gif {
-width: 180px;
-max-width: 100%;
+  width: 180px;
+  max-width: 100%;
 }
+
+/* Password input */
 
 #roomInput {
-width: 100%;
-max-width: 260px;
-padding: 12px 14px;
-border: 1px solid #ddd;
-border-radius: 14px;
-font-size: 1rem;
-margin-top: 16px;
+  width: 100%;
+  max-width: 260px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  margin-top: 16px;
 }
+
+/* Mobile */
 
 @media (max-width: 520px) {
-.card {
-padding: 22px;
-}
+  .card {
+    padding: 22px;
+  }
 
-.wheel {
-width: 220px;
-height: 220px;
-}
+  .wheel {
+    width: 220px;
+    height: 220px;
+  }
 }
