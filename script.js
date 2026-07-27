@@ -34,14 +34,13 @@ function checkRoom() {
   }
 }
 
-function updateSummary(title) {
-  const text = `Birthday plan:
-Date: ${state.date || "Not chosen"}
+function updateSummary() {
+  const text = `Date: ${state.date || "Not chosen"}
 Activities: ${state.activities.join(", ") || "None"}`;
 
-  summaryText.textContent = `${title} • ${text.replaceAll("\n", " • ")}`;
+  summaryText.textContent = text;
 
-  const telegramText = encodeURIComponent(`${title}\n${text}`);
+  const telegramText = encodeURIComponent(text);
   const telegramUrl = encodeURIComponent(window.location.href);
   telegramLink.href = `https://t.me/share/url?url=${telegramUrl}&text=${telegramText}`;
 
@@ -86,14 +85,14 @@ homeToSummary.addEventListener("click", () => {
   state.activities = [...document.querySelectorAll("#homeActivitiesScreen input:checked")].map(
     i => i.value
   );
-  updateSummary("Pookies chill at home 🏠");
+  updateSummary();
 });
 
 dayOutToSummary.addEventListener("click", () => {
   state.activities = [...document.querySelectorAll("#dayOutActivitiesScreen input:checked")].map(
     i => i.value
   );
-  updateSummary("Pookies day out ☀️");
+  updateSummary();
 });
 
 function goBackToVibe() {
