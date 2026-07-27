@@ -1132,3 +1132,54 @@ margin-top:
   }
 
 }
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+
+  display:
+    block;
+
+  margin:
+    0 auto 18px;
+
+  padding:
+    8px 16px;
+
+  border:
+    2px solid #e5d9cc;
+
+  border-radius:
+    999px;
+
+  background:
+    #fffdf8;
+
+  color:
+    #4f4540;
+
+  font-size:
+    0.9rem;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+.back-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 4px 8px
+    rgba(0, 0, 0, 0.12);
+
+}
