@@ -6,61 +6,223 @@
   <title>Birthday-te Surprise</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="app">
+
+    <!-- PASSWORD SCREEN -->
     <section class="screen active" id="gateScreen">
       <div class="card password-card">
-        <p class="label">Don't snoop if you're not Amanda!</p>
-        <h2>For Amanda's eyes only 👀 </h2>
-        <p class="subtitle">Enter our room number (with special characters included)</p>
-  
-        <input type="text" id="roomInput" placeholder="Type here..." />
-        <button class="btn" id="enterBtn">Enter</button>
-  
-        <p class="selected" id="gateMessage"></p>
-      </div>
-    </section>
-  
-    <section class="screen" id="intro">
-      <div class="card hero">
-        <p class="label">To Amanda,</p>
-        <h1>Happy 23rd Birthday ❤️</h1>
-        <p class="subtitle">A very special birthday-te surprise on your birthday hehe</p>
-  
-        <div class="intro-media">
-          <img src="./assets/kirby-birthday-gif.gif" alt="Kirby Birthday Gif" class="intro-gif">
-        </div>
-  
-        <button class="btn" id="startBtn">Start</button>
+
+        <p class="label">
+          Don't snoop if you're not Amanda!
+        </p>
+
+        <h2>
+          For Amanda's eyes only 👀
+        </h2>
+
+        <p class="subtitle">
+          Enter our room number (with special characters included)
+        </p>
+
+        <input
+          type="text"
+          id="roomInput"
+          placeholder="Type here..."
+        />
+
+        <button
+          class="btn"
+          id="enterBtn"
+        >
+          Enter
+        </button>
+
+        <p
+          class="selected"
+          id="gateMessage"
+        ></p>
+
       </div>
     </section>
 
-    <section class="screen" id="dateScreen">
-      <div class="card">
-        <p class="label">Step 1</p>
-        <h2>Choose a date</h2>
-        <p class="subtitle">Pick when you want your birthday-te to be ~</p>
-    
-        <div class="choices">
-          <button class="choice-btn date-btn"data-date="1 Aug 2026">1 Aug (Saturday)</button>
-          <button class="choice-btn date-btn"data-date="7 Aug 2026">7 Aug (Friday after NDP half day!)</button>
-          <button class="choice-btn date-btn"data-date="8 Aug 2026">8 Aug (Saturday)</button>
-          <button class="choice-btn date-btn"data-date="10 Aug 2026">10 Aug (Monday)</button>
+
+    <!-- INTRO SCREEN -->
+    <section class="screen" id="intro">
+      <div class="card hero">
+
+        <p class="label">
+          To Amanda,
+        </p>
+
+        <h1>
+          Happy 23rd Birthday ❤️
+        </h1>
+
+        <p class="subtitle">
+          A very special birthday-te surprise on your birthday hehe
+        </p>
+
+        <div class="intro-media">
+          <img
+            src="./assets/kirby-birthday-gif.gif"
+            alt="Kirby Birthday Gif"
+            class="intro-gif"
+          />
         </div>
-    
-        <p class="selected" id="dateResult"></p>
-        <div class="date-note">
+
+        <button
+          class="btn"
+          id="startBtn"
+        >
+          Start
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- MEMORIES / LETTER SCREEN -->
+    <section
+      class="screen"
+      id="memoriesScreen"
+    >
+      <div class="card memories-card">
+
+        <p class="label">
+          Before we begin 💌
+        </p>
+
+        <div class="memory-images">
+
+          <img
+            src="./assets/photo1.jpg"
+            alt="A memory of us"
+          />
+
+          <img
+            src="./assets/photo2.jpg"
+            alt="Another memory of us"
+          />
+
+        </div>
+
+        <div class="memory-letter">
+
           <p>
-            <strong>Note from Sharon:</strong><br>
-            I know I originally wrote on your planner for 1 Aug to be the birthday-te 
-            but I also wanted to ask if you would prefer the weekend after since it's 
-            a long weekend and also with our ndp half day YAY cause was thinking abt 
-            SMUFM on 2 Aug also then at least this weekend u got a full day of rest ~ 
-            So yess that was my thought process and ofc you should choose the best one 
-            for you I'm free for all of them :D
+            Dear Amanda,
+
+            <br><br>
+
+            Happy birthday-te hehe :D Before you choose what we're going to do,
+            I just wanted to say that I'm really grateful for all the memories
+            we've made together so far.
+
+            <br><br>
+
+            So here's a little birthday-te surprise for you. I hope you enjoy
+            choosing what we get up to together hehe ♡
           </p>
+
         </div>
-            
+
+        <button
+          class="btn"
+          id="toDate"
+        >
+          Continue 💌
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- DATE SCREEN -->
+    <section
+      class="screen"
+      id="dateScreen"
+    >
+      <div class="card">
+
+        <p class="label">
+          Step 1
+        </p>
+
+        <h2>
+          Choose a date
+        </h2>
+
+        <p class="subtitle">
+          Pick when you want your birthday-te to be ~
+        </p>
+
+
+        <div class="choices">
+
+          <button
+            class="choice-btn date-btn"
+            data-date="1 Aug 2026"
+          >
+            1 Aug (Saturday)
+          </button>
+
+          <button
+            class="choice-btn date-btn"
+            data-date="7 Aug 2026"
+          >
+            7 Aug (Friday after NDP half day!)
+          </button>
+
+          <button
+            class="choice-btn date-btn"
+            data-date="8 Aug 2026"
+          >
+            8 Aug (Saturday)
+          </button>
+
+          <button
+            class="choice-btn date-btn"
+            data-date="10 Aug 2026"
+          >
+            10 Aug (Monday)
+          </button>
+
+        </div>
+
+
+        <p
+          class="selected"
+          id="dateResult"
+        ></p>
+
+
+        <div class="date-note">
+
+          <p>
+
+            <strong>
+              Note from Sharon:
+            </strong>
+
+            <br><br>
+
+            I know I originally wrote on your planner for 1 Aug to be the
+            birthday-te but I also wanted to ask if you would prefer the
+            weekend after since it's a long weekend and also with our NDP
+            half day YAY cause was thinking abt SMUFM on 2 Aug also then at
+            least this weekend u got a full day of rest ~
+
+            <br><br>
+
+            So yess that was my thought process and ofc you should choose
+            the best one for you. I'm free for all of them :D
+
+          </p>
+
+        </div>
+
+
         <button
           class="btn next-btn"
           id="toActivities"
@@ -68,201 +230,377 @@
         >
           Continue
         </button>
-    
+
       </div>
     </section>
 
-<!-- MEMORIES / LETTER SCREEN -->
-    <section class="screen" id="memoriesScreen">
-      <div class="card memories-card">
-    
-        <p class="label">Before we begin 💌</p>
-    
-        <div class="memory-images">
-          <img
-            src="./assets/photo1.jpg"
-            alt="A memory of us"
-          />
-    
-          <img
-            src="./assets/photo2.jpg"
-            alt="Another memory of us"
-          />
+
+    <!-- ACTIVITIES SCREEN -->
+    <section
+      class="screen"
+      id="activitiesScreen"
+    >
+      <div class="card">
+
+        <p class="label">
+          Step 2
+        </p>
+
+        <h2>
+          The Itinerary 🤩
+        </h2>
+
+        <p class="subtitle">
+          Including activities for you to choose!
+        </p>
+
+
+        <div class="surprise-cards">
+
+
+          <!-- CAFE HOPPING -->
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  ☕ Cafe Hopping
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Cafe hopping"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- KARAOKE -->
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  🎤 Karaoke
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Karaoke"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DESSERT CAFE -->
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  🍰 Dessert Cafe
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Dessert cafe"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MOVIE NIGHT -->
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  🎬 Movie Night
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Movie night"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DINNER OUTING -->
+          <div class="surprise-card">
+
+            <div class="envelope">
+
+              <div class="envelope-front">
+
+                <span>
+                  ✉️
+                </span>
+
+                <p>
+                  A surprise for you...
+                </p>
+
+                <small>
+                  Click to reveal
+                </small>
+
+              </div>
+
+
+              <div class="activity-reveal">
+
+                <h3>
+                  🍽️ Dinner Outing
+                </h3>
+
+                <label>
+
+                  <input
+                    type="checkbox"
+                    value="Dinner outing"
+                  />
+
+                  Choose this activity
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
-    
-        <div class="memory-letter">
-          <p>
-            Dear Amanda,
-            <br><br>
-    
-            Happy birthday-te hehe :D Before you choose what we're going to do,
-            I just wanted to say that I'm really grateful for all the memories
-            we've made together so far.
-    
-            <br><br>
-    
-            So here's a little birthday-te surprise for you. I hope you enjoy
-            choosing what we get up to together hehe ♡
-          </p>
-        </div>
-    
-        <button class="btn" id="toDate">
-          Continue 💌
+
+
+        <button
+          class="btn next-btn"
+          id="toWheel"
+        >
+          Spin the wheel
         </button>
-    
+
       </div>
     </section>
 
-    <section class="screen" id="activitiesScreen">
+
+    <!-- WHEEL SCREEN -->
+    <section
+      class="screen"
+      id="wheelScreen"
+    >
       <div class="card">
-        <p class="label">Step 2</p>
-        <h2>The Intinerary 🤩</h2>
-        <p class="subtitle">Including activities for you to choose!</p>
 
-<div class="surprise-cards">
+        <p class="label">
+          Step 3
+        </p>
 
-  <div class="surprise-card">
-    <div class="envelope">
-      <div class="envelope-front">
-        <span>✉️</span>
-        <p>A surprise for you...</p>
-        <small>Click to reveal</small>
-      </div>
+        <h2>
+          Spin the wheel
+        </h2>
 
-```
-  <div class="activity-reveal">
-    <h3>☕ Cafe Hopping</h3>
-    <label>
-      <input type="checkbox" value="Cafe hopping">
-      Choose this activity
-    </label>
-  </div>
-</div>
-```
-
-  </div>
-
-  <div class="surprise-card">
-    <div class="envelope">
-      <div class="envelope-front">
-        <span>✉️</span>
-        <p>A surprise for you...</p>
-        <small>Click to reveal</small>
-      </div>
-
-```
-  <div class="activity-reveal">
-    <h3>🎤 Karaoke</h3>
-    <label>
-      <input type="checkbox" value="Karaoke">
-      Choose this activity
-    </label>
-  </div>
-</div>
-```
-
-  </div>
-
-  <div class="surprise-card">
-    <div class="envelope">
-      <div class="envelope-front">
-        <span>✉️</span>
-        <p>A surprise for you...</p>
-        <small>Click to reveal</small>
-      </div>
-
-```
-  <div class="activity-reveal">
-    <h3>🍰 Dessert Cafe</h3>
-    <label>
-      <input type="checkbox" value="Dessert cafe">
-      Choose this activity
-    </label>
-  </div>
-</div>
-```
-
-  </div>
-
-  <div class="surprise-card">
-    <div class="envelope">
-      <div class="envelope-front">
-        <span>✉️</span>
-        <p>A surprise for you...</p>
-        <small>Click to reveal</small>
-      </div>
-
-```
-  <div class="activity-reveal">
-    <h3>🎬 Movie Night</h3>
-    <label>
-      <input type="checkbox" value="Movie night">
-      Choose this activity
-    </label>
-  </div>
-</div>
-```
-
-  </div>
-
-  <div class="surprise-card">
-    <div class="envelope">
-      <div class="envelope-front">
-        <span>✉️</span>
-        <p>A surprise for you...</p>
-        <small>Click to reveal</small>
-      </div>
-
-```
-  <div class="activity-reveal">
-    <h3>🍽️ Dinner Outing</h3>
-    <label>
-      <input type="checkbox" value="Dinner outing">
-      Choose this activity
-    </label>
-  </div>
-</div>
-```
-
-  </div>
-
-</div>
-
-
-        <button class="btn next-btn" id="toWheel">Spin the wheel</button>
-      </div>
-    </section>
-
-    <section class="screen" id="wheelScreen">
-      <div class="card">
-        <p class="label">Step 3</p>
-        <h2>Spin the wheel</h2>
-        <p class="subtitle">Let fate choose one of your shortlisted ideas.</p>
+        <p class="subtitle">
+          Let fate choose one of your shortlisted ideas.
+        </p>
 
         <div class="wheel-wrap">
-          <div class="wheel" id="wheel">
+
+          <div
+            class="wheel"
+            id="wheel"
+          >
+
             <div class="pointer"></div>
-            <div class="wheel-center">Spin</div>
+
+            <div class="wheel-center">
+              Spin
+            </div>
+
           </div>
+
         </div>
 
-        <button class="btn" id="spinBtn">Spin</button>
-        <p class="selected" id="wheelResult">No result yet.</p>
-        <button class="btn next-btn" id="toSummary" disabled>Show summary</button>
+        <button
+          class="btn"
+          id="spinBtn"
+        >
+          Spin
+        </button>
+
+        <p
+          class="selected"
+          id="wheelResult"
+        >
+          No result yet.
+        </p>
+
+        <button
+          class="btn next-btn"
+          id="toSummary"
+          disabled
+        >
+          Show summary
+        </button>
+
       </div>
     </section>
 
-    <section class="screen" id="summaryScreen">
+
+    <!-- SUMMARY SCREEN -->
+    <section
+      class="screen"
+      id="summaryScreen"
+    >
       <div class="card">
-        <p class="label">Final step</p>
-        <h2>Your birthday plan</h2>
-        <p class="summary" id="summaryText"></p>
-        <a class="btn telegram-btn" id="telegramLink" href="#" target="_blank" rel="noopener">Send to Telegram</a>
+
+        <p class="label">
+          Final step
+        </p>
+
+        <h2>
+          Your birthday plan
+        </h2>
+
+        <p
+          class="summary"
+          id="summaryText"
+        ></p>
+
+        <a
+          class="btn telegram-btn"
+          id="telegramLink"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          Send to Telegram
+        </a>
+
       </div>
     </section>
 
   </main>
 
+
   <script src="script.js"></script>
+
 </body>
 </html>
