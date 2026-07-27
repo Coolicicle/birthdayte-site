@@ -36,10 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateSummary() {
-    const text = `Date: ${state.date || "Not chosen"}<br>
-Activities: ${state.activities.join(", ") || "None"}`;
-
-    summaryText.textContent = text;
+summaryText.textContent = `Date: ${date}\nActivities: Get matching pokopia shirts + ${activities}`;
 
     const telegramText = encodeURIComponent(text);
     const telegramUrl = encodeURIComponent(window.location.href);
