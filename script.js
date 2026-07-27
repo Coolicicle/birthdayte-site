@@ -1,15 +1,25 @@
+// =========================
+// SCREEN NAVIGATION
+// =========================
+
 const screens = [
   ...document.querySelectorAll('.screen')
 ];
 
+
 function show(id) {
+
   screens.forEach(screen => {
+
     screen.classList.toggle(
       'active',
       screen.id === id
     );
+
   });
+
 }
+
 
 
 // =========================
@@ -17,10 +27,15 @@ function show(id) {
 // =========================
 
 const state = {
+
   date: '',
+
   activities: [],
+
   wheel: ''
+
 };
+
 
 
 // =========================
@@ -39,18 +54,24 @@ const gateMessage =
 const startBtn =
   document.getElementById('startBtn');
 
-const toDate =
-  document.getElementById('toDate');
+const toActivities =
+  document.getElementById('toActivities');
+
+const toActivitiesFromMemories =
+  document.getElementById(
+    'toActivitiesFromMemories'
+  );
 
 const dateBtns = [
-  ...document.querySelectorAll('.date-btn')
+
+  ...document.querySelectorAll(
+    '.date-btn'
+  )
+
 ];
 
 const dateResult =
   document.getElementById('dateResult');
-
-const toActivities =
-  document.getElementById('toActivities');
 
 const toWheel =
   document.getElementById('toWheel');
@@ -74,6 +95,7 @@ const telegramLink =
   document.getElementById('telegramLink');
 
 
+
 // =========================
 // PASSWORD → INTRO
 // =========================
@@ -95,11 +117,14 @@ function checkRoom() {
     gateMessage.textContent =
       'Nope try again 🤔';
 
+
     gateMessage.classList.remove(
       'flicker'
     );
 
+
     void gateMessage.offsetWidth;
+
 
     gateMessage.classList.add(
       'flicker'
@@ -118,9 +143,11 @@ enterBtn.addEventListener(
 
 roomInput.addEventListener(
   'keydown',
-  (event) => {
+  event => {
 
-    if (event.key === 'Enter') {
+    if (
+      event.key === 'Enter'
+    ) {
 
       event.preventDefault();
 
@@ -132,25 +159,12 @@ roomInput.addEventListener(
 );
 
 
+
 // =========================
-// INTRO → MEMORIES
+// INTRO → DATE
 // =========================
 
 startBtn.addEventListener(
-  'click',
-  () => {
-
-    show('memoriesScreen');
-
-  }
-);
-
-
-// =========================
-// MEMORIES → DATE
-// =========================
-
-toDate.addEventListener(
   'click',
   () => {
 
@@ -158,6 +172,7 @@ toDate.addEventListener(
 
   }
 );
+
 
 
 // =========================
@@ -205,11 +220,27 @@ dateBtns.forEach(
 );
 
 
+
 // =========================
-// DATE → ACTIVITIES
+// DATE → MEMORIES
 // =========================
 
 toActivities.addEventListener(
+  'click',
+  () => {
+
+    show('memoriesScreen');
+
+  }
+);
+
+
+
+// =========================
+// MEMORIES → ACTIVITIES
+// =========================
+
+toActivitiesFromMemories.addEventListener(
   'click',
   () => {
 
@@ -219,14 +250,17 @@ toActivities.addEventListener(
 );
 
 
+
 // =========================
 // SURPRISE CARD OPENING
 // =========================
 
 const surpriseCards = [
+
   ...document.querySelectorAll(
     '.surprise-card'
   )
+
 ];
 
 
@@ -235,15 +269,19 @@ surpriseCards.forEach(
 
     card.addEventListener(
       'click',
-      (event) => {
+      event => {
 
-        // Clicking the checkbox should
-        // not close the card
+
+        // Do not close the card
+        // when clicking the checkbox
 
         if (
-          event.target.tagName === 'INPUT'
+          event.target.tagName ===
+          'INPUT'
         ) {
+
           return;
+
         }
 
 
@@ -258,6 +296,7 @@ surpriseCards.forEach(
 );
 
 
+
 // =========================
 // ACTIVITIES → WHEEL
 // =========================
@@ -266,10 +305,13 @@ toWheel.addEventListener(
   'click',
   () => {
 
+
     state.activities = [
+
       ...document.querySelectorAll(
         '.activity-reveal input:checked'
       )
+
     ].map(
       input => input.value
     );
@@ -294,6 +336,7 @@ toWheel.addEventListener(
 );
 
 
+
 // =========================
 // SPIN THE WHEEL
 // =========================
@@ -302,10 +345,13 @@ spinBtn.addEventListener(
   'click',
   () => {
 
+
     if (
       state.activities.length === 0
     ) {
+
       return;
+
     }
 
 
@@ -329,10 +375,13 @@ spinBtn.addEventListener(
     setTimeout(
       () => {
 
+
         const randomIndex =
           Math.floor(
+
             Math.random() *
             state.activities.length
+
           );
 
 
@@ -353,12 +402,14 @@ spinBtn.addEventListener(
         spinBtn.disabled =
           false;
 
+
       },
       3000
     );
 
   }
 );
+
 
 
 // =========================
@@ -368,6 +419,7 @@ spinBtn.addEventListener(
 toSummary.addEventListener(
   'click',
   () => {
+
 
     const text =
 `Birthday plan:
